@@ -15,12 +15,12 @@
 #
 # AWS S3 Bucket
 echo "Printing list of S3 buckets"
-aws s3 ls
+aws s3 ls > s3-buckets
 
 # AWS EC2 Instances
 echo "Printing list of EC2 Instances(Instance ID)"
-aws ec2 descirbe-instances | jq '.Reservations[].Instances[].InstanceId'
+aws ec2 descirbe-instances | jq '.Reservations[].Instances[].InstanceId' > ec2-instance
 
 #AWS IAM Users
 echo "Printing list IAM users"
-aws iam list-users
+aws iam list-users > iam-users
